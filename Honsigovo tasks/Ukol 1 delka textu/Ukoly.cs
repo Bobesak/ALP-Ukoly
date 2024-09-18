@@ -50,7 +50,6 @@ namespace Ukoly
             UserEntryFloat2 = float.Parse(Console.ReadLine());
             float soucet = UserEntryFloat1 + UserEntryFloat2;
             soucet = (float)Math.Round(soucet, 2);
-            
             Console.WriteLine("Soucet dvou desetinnych cisel je: " + soucet);
             Console.ReadKey();
             
