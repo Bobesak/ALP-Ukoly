@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PrumerCisel;
 namespace Ukoly
 {
     class Program
@@ -12,6 +13,7 @@ namespace Ukoly
             Console.WriteLine("Vyber si ukol: ");
             Console.WriteLine("1. Delka textu");
             Console.WriteLine("2. Soucet desetinnych cisel");
+            Console.WriteLine("3. Prumer cisel");
             int UserChoice;
             UserChoice = int.Parse(Console.ReadLine());
             switch (UserChoice)
@@ -21,6 +23,9 @@ namespace Ukoly
                     break;
                 case 2:
                     FloatSoucet();
+                    break;
+                case 3 :
+                    PocetCisel.Start();
                     break;
                 default:
                     Console.WriteLine("Zadal jsi spatnou volbu");

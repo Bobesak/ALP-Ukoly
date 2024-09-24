@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace PrumerCisel
 {
@@ -11,7 +12,7 @@ namespace PrumerCisel
         static int i;
         
         
-        static void Main(String[] args)
+        public static void Start()
         {
             Console.WriteLine("Kolik cisel chcete zadat?");
             pocetciselcelkove = int.Parse(Console.ReadLine());
@@ -21,15 +22,25 @@ namespace PrumerCisel
             {
                 ZadavaniCisel();
                 cisla[i] = cislo;
+                Console.WriteLine(i);
             }
-            Console.WriteLine(cisla);
+            foreach (int item in cisla)
+            {
+                Console.Write(item + ", ");
+            }
             
+            
+            
+            double Average =cisla.Average();
+            Console.WriteLine("prumer cisel je :" + Average);
+            Console.ReadKey();
+
         }
 
         static void ZadavaniCisel()
         {
             string input;
-            Console.WriteLine("Cislo?");
+            Console.WriteLine("Cislo? 1-5");
             input = Console.ReadLine();
             if (input == "Konec")
             {
@@ -39,18 +50,15 @@ namespace PrumerCisel
             {
                 i = 10;
             }
-            else
+
+            while (int.Parse(input) < 1 || int.Parse(input) > 5)
             {
-                cislo = int.Parse(input);
+                Console.WriteLine("Neplatne cislo");
+                Console.WriteLine("Cislo? 1-5");
+                input = Console.ReadLine();
             }
-
+            cislo = int.Parse(input);
             
-            
-            
-            
-            
-            
-
         }
 
 
