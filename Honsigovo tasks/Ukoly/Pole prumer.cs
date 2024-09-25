@@ -16,7 +16,7 @@ namespace PrumerCisel
         {
             Console.WriteLine("Kolik cisel chcete zadat?");
             pocetciselcelkove = int.Parse(Console.ReadLine());
-            int[] cisla = new int[pocetciselcelkove - 1];
+            int[] cisla = new int[pocetciselcelkove];
             Console.WriteLine("muzete zacit, pokud chcete ukoncit proces napiste konec");
             for (int i = 0; i < pocetciselcelkove; i++)
             {
@@ -24,14 +24,8 @@ namespace PrumerCisel
                 cisla[i] = cislo;
                 Console.WriteLine(i);
             }
-            foreach (int item in cisla)
-            {
-                Console.Write(item + ", ");
-            }
-            
-            
-            
-            double Average =cisla.Average();
+
+            double Average = cisla.Average();
             Console.WriteLine("prumer cisel je :" + Average);
             Console.ReadKey();
 
@@ -42,15 +36,10 @@ namespace PrumerCisel
             string input;
             Console.WriteLine("Cislo? 1-5");
             input = Console.ReadLine();
-            if (input == "Konec")
+            if (input == "Konec" || input == "konec")
             {
                 i = 10;
             }
-            else if (input == "konec")
-            {
-                i = 10;
-            }
-
             while (int.Parse(input) < 1 || int.Parse(input) > 5)
             {
                 Console.WriteLine("Neplatne cislo");
